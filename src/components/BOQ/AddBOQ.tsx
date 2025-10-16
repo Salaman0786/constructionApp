@@ -74,7 +74,11 @@ const AddBOQ: React.FC<AddUserModalProps> = ({ isOpen, onClose }) => {
                 name="description"
                 placeholder="Enter description"
                 value={form.email}
-                onChange={handleChange}
+                onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
+                  handleChange(
+                    e as unknown as React.ChangeEvent<HTMLInputElement>
+                  )
+                }
                 required
                 className="w-full mt-1 border border-gray-300 rounded-md p-2 text-sm focus:ring-2 focus:ring-purple-600 outline-none resize-y min-h-[100px]"
               />
